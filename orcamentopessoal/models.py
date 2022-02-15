@@ -7,7 +7,7 @@ class Receita(models.Model):
     data = models.DateField()
 
     def __str__(self):
-        return self.nome
+        return self.descricao
 
     def get_data(self):
         return self.data.strftime('%d/%m/%Y')
@@ -19,7 +19,7 @@ class Despesa(models.Model):
     data = models.DateField()
 
     def __str__(self):
-        return self.nome
+        return self.descricao
 
     def get_data(self):
         return self.data.strftime('%d/%m/%Y')

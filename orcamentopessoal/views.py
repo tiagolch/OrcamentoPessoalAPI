@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def ReceitaList(request):
+    return render(request, 'receita_list.html')
