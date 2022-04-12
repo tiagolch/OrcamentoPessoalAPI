@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}DASHBOARD{% endblock %}
+
+{% block nav %}
+    {% if user %}
+        <h1>Bem vindo {{ user }}</h1>
+        {% else %}
+        <h1>Bem vindo visitante</h1>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

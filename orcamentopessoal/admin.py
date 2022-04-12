@@ -8,12 +8,12 @@ class DespesaAdmin(admin.ModelAdmin):
     list_filter = ('data', 'categoria', 'pessoa', 'cartao')
     search_fields = ('descricao',)
 
+
 @admin.register(Receita)
 class ReceitaAdmin(admin.ModelAdmin):
     list_display = ('descricao', 'valor', 'get_data')
     list_filter = ('data',)
     search_fields = ('descricao',)
-
 
 
 @admin.register(Categoria)
