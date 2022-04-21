@@ -13,9 +13,9 @@
 {% block content %}
     {% if totalReceita or totalDespesa or saldo %}
         <div>
-           <br>TOTAL RECEITA: R${{ totalReceita }}
-           <br>TOTAL DESPESA: R${{ totalDespesa }}
-           <br><strong>SALDO: R${{ saldo }}</strong>
+           <br>TOTAL RECEITA: R${{ totalReceita | floatformat:2 }}
+           <br>TOTAL DESPESA: R${{ totalDespesa | floatformat:2 }}
+           <br><strong>SALDO: R${{ saldo | floatformat:2 }}</strong>
         </div>  
     {% endif %}
 {% endblock %}
