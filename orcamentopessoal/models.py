@@ -72,6 +72,11 @@ class Despesa(models.Model):
     pessoa = models.ForeignKey(Pessoa, on_delete=models.DO_NOTHING, null=True, blank=True)
     descricao = models.CharField(max_length=100)
     valor = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    valorParcelado = models.DecimalField(max_digits=10, 
+                                        decimal_places=2, 
+                                        default=0,  
+                                        verbose_name='Valor Parcelado',
+                                        editable=False)
     cartao = models.ForeignKey(Cartao, on_delete=models.DO_NOTHING, null=True, blank=True)
     parcela = models.PositiveIntegerField(null=True, blank=True)
     fixo = models.BooleanField(default=False)
@@ -86,4 +91,10 @@ class Despesa(models.Model):
 
     def save(self, *args, **kwargs):
         self.descricao = self.descricao.upper()
+        if self.parcela:
+            self.valorParcelado = self.valor / self.parcela
+        else:
+            self.valorParcelado = 0
         super(Despesa, self).save(*args, **kwargs)
+
+ 

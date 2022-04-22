@@ -4,7 +4,7 @@ from .models import Receita, Despesa, Categoria, Pessoa, Cartao
 
 @admin.register(Despesa)
 class DespesaAdmin(admin.ModelAdmin):
-    list_display = ('descricao', 'valor', 'pessoa', 'get_data')
+    list_display = ('descricao', 'valor', 'valorParcelado', 'pessoa', 'get_data')
     list_filter = ('data', 'categoria', 'pessoa', 'cartao')
     search_fields = ('descricao',)
 
