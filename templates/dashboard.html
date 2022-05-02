@@ -12,6 +12,7 @@
 
 {% block content %}
     {% if totalReceita or totalDespesa or saldo %}
+        <div><a href="{% url 'home'%}">Home</a></div>
         <div>
            <br>TOTAL RECEITA: R${{ totalReceita | floatformat:2 }}
            <br>TOTAL DESPESA: R${{ totalDespesa | floatformat:2 }}

@@ -5,6 +5,7 @@
 {% block nav %}
     {% if user %}
         <h1>Bem vindo a Home {{ user }}</h1>
+        <div><a href="{% url 'dashboard' %}">Veja o dashboard</a></div>
     {% endif %}
 {% endblock %}
 

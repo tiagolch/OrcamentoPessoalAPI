@@ -4,7 +4,7 @@ import orcamentopessoal.urls
 import dashboard.urls
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name='admin'),
     path('', include(orcamentopessoal.urls)),
     path('', include(dashboard.urls)),
 ]
