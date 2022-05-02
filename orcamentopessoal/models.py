@@ -17,7 +17,6 @@ class Receita(models.Model):
         super(Receita, self).save(*args, **kwargs)
     
 
-
 class Cartao(models.Model):
     bandeira = models.CharField(max_length=100)
     numero = models.PositiveIntegerField()
@@ -40,7 +39,6 @@ class Cartao(models.Model):
     def save(self, *args, **kwargs):
         self.bandeira = self.bandeira.upper()
         super(Cartao, self).save(*args, **kwargs)
-
 
 
 class Categoria(models.Model):
